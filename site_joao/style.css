@@ -1,0 +1,188 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fce4ec; /* Rosa muito clarinho */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Para garantir que o confetti não cause scroll */
+    color: #4a4a4a;
+    position: relative;
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    z-index: 10; /* Para ficar acima do confetti */
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+    color: #e91e63; /* Rosa vibrante */
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 1.3em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #6a004a; /* Tom de rosa mais escuro para o texto */
+}
+
+.heart-box {
+    background-color: #ffdde1; /* Rosa claro para a caixa */
+    border: 3px dashed #e91e63;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.heart-box:hover {
+    transform: scale(1.03);
+}
+
+.heart-emoji {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.heart-box p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #d81b60;
+    margin-bottom: 20px;
+}
+
+.yes-button {
+    background-color: #e91e63; /* Rosa do botão */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.4em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+}
+
+.yes-button:hover {
+    background-color: #d81b60; /* Rosa mais escuro ao passar o mouse */
+    transform: translateY(-2px);
+}
+
+.yes-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(233, 30, 99, 0.4);
+}
+
+.response-container {
+    margin-top: 40px;
+}
+
+.response-title {
+    font-family: 'Pacifico', cursive;
+    color: #4CAF50; /* Verde para a mensagem de sucesso */
+    font-size: 2.8em;
+    margin-bottom: 15px;
+}
+
+.response-message {
+    font-size: 1.2em;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.signature {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em;
+    color: #e91e63;
+    margin-top: 30px;
+}
+
+.cute-gif {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 2px solid #ffb3c1;
+}
+
+/* Utilitário para esconder elementos */
+.hidden {
+    display: none;
+}
+
+/* Confetti - Estilos básicos */
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Para não bloquear cliques */
+    z-index: 5;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff99cc; /* Rosa claro */
+    border-radius: 50%;
+    opacity: 0;
+    animation: fall ease-out forwards;
+}
+
+.confetti:nth-child(2n) { background-color: #ffb3e6; } /* Outro tom de rosa */
+.confetti:nth-child(3n) { background-color: #ffcccc; } /* Outro tom de rosa */
+.confetti:nth-child(4n) { background-color: #ccffcc; border-radius: 0; } /* Verde claro */
+.confetti:nth-child(5n) { background-color: #ffff99; } /* Amarelo claro */
+
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotateZ(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotateZ(720deg);
+        opacity: 0;
+    }
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+    .title {
+        font-size: 2.2em;
+    }
+    .message {
+        font-size: 1.1em;
+    }
+    .yes-button {
+        font-size: 1.2em;
+        padding: 12px 25px;
+    }
+    .response-title {
+        font-size: 2em;
+    }
+    .signature {
+        font-size: 1.2em;
+    }
+}
